@@ -5,14 +5,15 @@ import cors from 'cors';
 
 const app = express();
 const server = http.createServer(app);
+
 const io = new SocketIO(server, {
   cors: {
-    origin: '*',
-    methods: ['GET', 'POST']
-  }
+    origin: 'http://localhost:3000/', // Replace with your frontend domain
+    methods: ['GET', 'POST'],
+  },
 });
 
-app.use(cors()); // Enable CORS
+app.use(cors()); // Apply CORS middleware
 app.use(express.json());
 app.use(express.static('public'));
 
