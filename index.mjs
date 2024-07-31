@@ -8,7 +8,7 @@ const server = http.createServer(app);
 
 const io = new SocketIO(server, {
   cors: {
-    origin: 'http://localhost:3000/', // Replace with your frontend domain
+    origin: 'http://localhost:3000/livesession', // Replace with your frontend domain
     methods: ['GET', 'POST'],
   },
 });
